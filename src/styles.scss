@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../src/assets/css/main.scss";
+.logo{
+    width: 40px;
+}
+ul {
+    padding: 0;
+    li{
+        list-style-type: none;
+    };
+}

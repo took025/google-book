@@ -1,0 +1,11 @@
+.items-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+    display:flex;
+    flex-wrap: wrap;
+    .items{
+        flex: 0 1 33%;
+    }
+}

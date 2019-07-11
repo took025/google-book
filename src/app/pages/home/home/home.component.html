@@ -1,0 +1,14 @@
+<ng-container *ngIf="booksList && booksList.length">
+  <div class="container">
+    <div class="row">
+      <ng-container *ngFor="let item of booksList">
+        <div class="col-12 col-md-4 col-lg-3">
+          <div class="items">
+            <app-item [data]="item" [isFaborited]="true" (toggleFavourite)="toggleFavourite($event)"></app-item>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
+<app-loader *ngIf="load"></app-loader>

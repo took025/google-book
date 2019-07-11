@@ -1,0 +1,45 @@
+<ng-container *ngIf="data" class="container m-3">
+  <article class="article">
+    <div class="tr boxx">
+      <div class="img" [routerLink]="['detail', data.id]">
+        <img
+          *ngIf="data?.volumeInfo?.imageLinks?.thumbnail"
+          [src]="data.volumeInfo.imageLinks.thumbnail"
+        />
+        <img
+          *ngIf="!data?.volumeInfo?.imageLinks?.thumbnail"
+          src="../../../../assets/images/alt.jpg"
+        />
+      </div>
+      <ul class="description">
+        <li *ngIf="data?.volumeInfo?.title">
+          title: {{ data?.volumeInfo?.title }}
+        </li>
+        <li *ngIf="data?.volumeInfo?.authors">
+          authors: {{ data?.volumeInfo?.authors }}
+        </li>
+        <ul class="description" *ngIf="seeMore">
+          <li *ngIf="data?.volumeInfo?.publisher">
+            publisher: {{ data?.volumeInfo?.publisher }}
+          </li>
+          <li *ngIf="data?.volumeInfo?.publishedDate">
+            publishedDate: {{ data?.volumeInfo?.publishedDate }}
+          </li>
+        </ul>
+      </ul>
+      <div class="item-footer">
+        <span class="fav-btn m-2 " id="BT"  (click)="btnClicked(data?.id)"
+        [title]="isFaborited ? 'favorite this book' : 'unfavorite this book'">
+          <i  *ngIf="!isFaborited" class="material-icons">favorite</i>
+          <i  *ngIf="isFaborited" class="material-icons">favorite_border</i>
+          <title>{{favorite}}</title>
+        </span>
+        <span class="show-more d-flex m-2 " (click)="showMore()"
+        *ngIf="data?.volumeInfo?.publishedDate && data?.volumeInfo?.publisher">
+          ...see {{ seeMore ? 'less' : 'more' }}
+          <i class="material-icons">arrow_drop_{{ seeMore ? 'up' : 'down' }} </i>
+        </span>
+      </div>
+    </div>
+  </article>
+</ng-container>

@@ -1,0 +1,4 @@
+export const GET_BOOKS = 'GET_BOOKS';
+export const GET_BOOKS_SUCCESS = 'GET_BOOKS_SUCCESS';
+
+export const TOGGLE_FAVOURITE = 'TOGGLE_FAVOURITE';
