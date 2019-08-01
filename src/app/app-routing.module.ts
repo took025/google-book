@@ -15,11 +15,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/detail/detail.module').then(m =>  m.DetailModule)
   },
   {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full',
-  },
-  {
     path: '**',
     loadChildren: './pages/page-not-found/page-not-found.module#PageNottFoundModule'
   }

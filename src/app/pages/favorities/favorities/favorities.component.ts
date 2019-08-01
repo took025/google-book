@@ -15,7 +15,6 @@ export class FavoritiesComponent implements OnInit, OnDestroy {
   booksState$: Observable<any>;
   booksSubscription: Subscription;
   booksList: any[];
-  loadign = true;
   isFaborited = true;
 
   constructor(private booksService: BooksService, private store: Store<any>) {
@@ -26,7 +25,6 @@ export class FavoritiesComponent implements OnInit, OnDestroy {
 
     this.booksSubscription = this.booksState$.pipe(map(data => {
       this.booksList = data.books.filter(x => x.isFavourite);
-      this.loadign = data.load;
     })).subscribe();
   }
 
@@ -39,7 +37,6 @@ export class FavoritiesComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(toggleFavouriteAction);
     this.isFaborited = !this.isFaborited;
-    this.loadign = !this.loadign;
   }
 
   ngOnDestroy() {
