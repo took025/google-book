@@ -63,12 +63,12 @@
 }
 .load{
   width: 100%;
-  height: calc(100% - 130px);
+  height: calc(100% - 125px);
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
-  top: 70px;
+  top: 65px;
   background-color: rgba(107, 162, 234, 0.95);
   z-index: 9999999;
 }

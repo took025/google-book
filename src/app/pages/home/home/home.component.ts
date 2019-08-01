@@ -27,7 +27,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     };
 
     this.booksSubscription = this.booksState$.pipe(map(data => {
-      // console.log(data.books, 'books');
       this.booksList = data.books;
       this.load = data.load;
     })).subscribe();
