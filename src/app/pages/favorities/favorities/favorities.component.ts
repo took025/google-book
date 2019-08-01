@@ -39,7 +39,6 @@ export class FavoritiesComponent implements OnInit, OnDestroy {
     };
     this.store.dispatch(toggleFavouriteAction);
     this.isFaborited = !this.isFaborited;
-    this.loadign = !this.loadign;
   }
 
   ngOnDestroy() {
